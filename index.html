@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <script src="frontend/lib/stats.min.js"></script>
+    <title>RadarViewer</title>
+</head>
+<body>
+    <canvas class="map"></canvas>
+    <canvas class="map-text"></canvas>
+
+    <div class="sidebar">
+        <h1 class="sidebar-station">KLWX</h1>
+        <p class="sidebar-date">Jan 1, 11:50 AM</p>
+        <p class="sidebar-vcp">VCP 212</p>
+        <div class="seperator"></div>
+
+        <select name="tilt" id="tilt-select">
+            <option value="1">Tilt 0</option>
+            <option value="2">Tilt 1</option>
+            <option value="3">Tilt 2</option>
+        </select>
+
+        <select name="product" id="product-select" onchange="switchProduct(this)">
+            <option value="REF">Base Reflectivity</option>
+            <option value="VEL">Base Velocity</option>
+            <option value="RHO">Cross Correlation</option>
+        </select>
+        <input type="range" min="0" max="4" value="4" class="slider" oninput="setLoopIndex(this)">
+        <div class="seperator"></div>
+
+        <div class="ready-indicator">
+            <p class="ready-indicator-text">Ready</p> <p class="ready-indicator-timer">No Update Time Available</p>
+        </div>
+    </div>
+
+    <script src="frontend/Map/Rendering/Radar/Colormap.js"></script>
+    <script src="frontend/Map/CRS.js"></script>
+    <script src="frontend/Map/Layer.js"></script>
+    <script src="frontend/Map/LabelsLayer.js"></script>
+    <script src="frontend/Map/Map.js"></script>
+    <script src="frontend/Map/Rendering/Shader.js"></script>
+    <script src="frontend/Map/Rendering/ShaderProgram.js"></script>
+    <script src="frontend/Map/Rendering/Buffer.js"></script>
+    <script src="frontend/Map/Rendering/VertexArrayObject.js"></script>
+    <script src="frontend/Map/Rendering/Camera.js"></script>
+    <script src="frontend/Map/Rendering/Renderer.js"></script>
+    <script src="frontend/Map/Rendering/Radar/VertexDataGenerator.js"></script>
+    <script src="frontend/Map/RadarLayer.js"></script>
+    <script src="frontend/index.js"></script>
+    <script src="frontend/interface/RadarInteraction.js"></script>
+    <script src="frontend/interface/StatusIndicator.js"></script>
+
+</body>
+</html>
