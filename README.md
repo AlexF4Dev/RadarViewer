@@ -1,5 +1,6 @@
 # RadarViewer
 Electron based NEXRAD Level II Weather Radar Viewer (WIP)
+Visualizations rendered in WebGL in real time. Data parsed using custom NEXRAD parser.
 
 ## Supported Products
 - Base Reflectivity
