@@ -13,7 +13,7 @@
     "electron": "^22.3.25"
   },
   "dependencies": {
-    "axios": "^0.21.1",
+    "axios": "^0.21.2",
     "moment-timezone": "^0.5.32",
     "seek-bzip": "^2.0.0"
   }
