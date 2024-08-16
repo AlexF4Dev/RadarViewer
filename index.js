@@ -1,17 +1,23 @@
 const { app, BrowserWindow, ipcMain } = require('electron')
 //const { Level2Archive } = require('./backend/parser/Level2Archive')
 const { NexradFetcher } = require('./backend/datamanagement/NexradFetcher');
+
+const path = require('path');
 //const { ElevationDataConstantType } = require('./backend/parser/RadialData');
 
-const fetcher = new NexradFetcher('KLWX');
+const fetcher = new NexradFetcher('KRLX');
 
 
 function createWindow () {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    contextIsolation: false,
+    nodeIntegration: true,
     webPreferences: {
-      nodeIntegration: true
+      nodeIntegration: true,
+      preload: path.join(__dirname, 'preload.js'),
+      contextIsolation: false,
     }
   })
   fetcher.win = win;

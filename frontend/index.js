@@ -2,7 +2,7 @@ const { ipcRenderer } = require('electron')
 
 const map = new Map(document.querySelector(".map"), {lat: 39.2673, lon: 76.7983});
 
-ipcRenderer.send('archive', 'KLWX');
+ipcRenderer.send('archive', 'KRLX');
 
 ipcRenderer.on('archive', (event, archive) => {
     map.addLayer(new RadarLayer(archive, "REF"))
