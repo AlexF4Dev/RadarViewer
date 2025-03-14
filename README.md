@@ -15,7 +15,7 @@ Visualizations rendered in WebGL in real time. Data parsed using custom NEXRAD p
 
 ###
 ```console
-wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb 
-sudo apt install ./google-chrome-stable_current_amd64.deb google-chrome
+
+npx -g playwright -g install --with-deps chromium
 ```
 ```` 
